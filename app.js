@@ -6,12 +6,14 @@ require('./config/db')
 
 //import des routes
 const authRoutes = require('./routes/authRoutes')
+const projectRoutes = require('./routes/projectRoutes')
 
 
 app.use(express.json()) //parse les requetes JSON
 
 //monte le routeur sur le chemin de base
 app.use('/api/v1/auth', authRoutes)
+app.use('/api/v1/projects', projectRoutes)
 
 // url
 app.get('/', (req,res) => {
